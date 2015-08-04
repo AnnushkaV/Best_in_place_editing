@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= best_in_place @user, :name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= best_in_place  @user, :email %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= best_in_place @user, :gender, type: :select, collection: [["Male", "Male"],["Female", "Female"],["", "Unspecified"]] %>
+</p>
+
+<p>
+  <strong>Public profile:</strong>
+  <%= best_in_place @user, :public_profile, type: :checkbox, collection: %w[No Yes] %>
+</p>
+
+<p>
+  <strong>Bio:</strong>
+  <%= best_in_place @user, :bio, type: :textarea %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
